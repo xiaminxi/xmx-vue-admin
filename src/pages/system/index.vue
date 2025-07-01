@@ -9,6 +9,7 @@
     import { getList } from '@/service/api';
     import ActiveHome from './components/ActiveHome';
     import { onMounted } from 'vue';
+    defineOptions({ name: "Menu" })
 
 
     getList().then(res => {

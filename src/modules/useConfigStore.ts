@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 const useConfigStore = defineStore("useConfigStore", {
     state: () => {
         return {
-            collapsed: true
+            collapsed: false
         }
     },
     actions: {

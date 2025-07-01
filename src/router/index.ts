@@ -66,28 +66,171 @@ export const routes: RouteRecordRaw[] = [
         ]
     },
     {
-        path: "/testd",
-        meta: { title: "测试菜单", icon: "MenuUnfoldOutlined" },
+        path: "/test5",
+        meta: { title: "系统管理", icon: "MenuUnfoldOutlined" },
         component: Layout,
         children: [
             {
-                path: "system",
-                meta: { title: "系统管理" },
+                path: "menu",
+                name: "test5Menu",
+                meta: {
+                    title: "菜单管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
                 component: () => import("@/pages/system/index.vue")
             },
             {
                 path: "user",
-                meta: { title: "用户管理" },
-
+                name: "test5User",
+                meta: {
+                    title: "用户管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
                 component: () => import("@/pages/user/index.vue")
             },
             {
                 path: "product",
+                name: "test5Product",
                 meta: { title: "产品管理" },
                 component: () => import("@/pages/product/index.vue")
             },
         ]
-    }
+    },
+    {
+        path: "/test4",
+        meta: { title: "系统管理", icon: "MenuUnfoldOutlined" },
+        component: Layout,
+        children: [
+            {
+                path: "menu",
+                name: "test4Menu",
+                meta: {
+                    title: "菜单管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/system/index.vue")
+            },
+            {
+                path: "user",
+                name: "test4User",
+                meta: {
+                    title: "用户管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/user/index.vue")
+            },
+            {
+                path: "product",
+                name: "test4Product",
+                meta: { title: "产品管理" },
+                component: () => import("@/pages/product/index.vue")
+            },
+        ]
+    },
+    {
+        path: "/test3",
+        meta: { title: "系统管理", icon: "MenuUnfoldOutlined" },
+        component: Layout,
+        children: [
+            {
+                path: "menu",
+                name: "test3Menu",
+                meta: {
+                    title: "菜单管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/system/index.vue")
+            },
+            {
+                path: "user",
+                name: "test3User",
+                meta: {
+                    title: "用户管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/user/index.vue")
+            },
+            {
+                path: "product",
+                name: "test3Product",
+                meta: { title: "产品管理" },
+                component: () => import("@/pages/product/index.vue")
+            },
+        ]
+    },
+    {
+        path: "/test2",
+        meta: { title: "系统管理", icon: "MenuUnfoldOutlined" },
+        component: Layout,
+        children: [
+            {
+                path: "menu",
+                name: "test2Menu",
+                meta: {
+                    title: "菜单管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/system/index.vue")
+            },
+            {
+                path: "user",
+                name: "test2User",
+                meta: {
+                    title: "用户管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/user/index.vue")
+            },
+            {
+                path: "product",
+                name: "test2Product",
+                meta: { title: "产品管理" },
+                component: () => import("@/pages/product/index.vue")
+            },
+        ]
+    },
+    {
+        path: "/test1",
+        meta: { title: "系统管理", icon: "MenuUnfoldOutlined" },
+        component: Layout,
+        children: [
+            {
+                path: "menu",
+                name: "test1Menu",
+                meta: {
+                    title: "菜单管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/system/index.vue")
+            },
+            {
+                path: "user",
+                name: "test1User",
+                meta: {
+                    title: "用户管理",
+                    icon: "MenuUnfoldOutlined",
+                    keepAlive: true
+                },
+                component: () => import("@/pages/user/index.vue")
+            },
+            {
+                path: "product",
+                name: "test1Product",
+                meta: { title: "产品管理" },
+                component: () => import("@/pages/product/index.vue")
+            },
+        ]
+    },
+
 ]
 
 

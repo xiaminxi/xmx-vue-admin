@@ -1,10 +1,10 @@
 import { defineStore } from "pinia";
 
-const useConfigStore = defineStore("useConfigStore", {
+const useLoginStore = defineStore("useLoginStore", {
     state: () => {
         return {
             userInfo: {
-                token: null
+                token: "41234"
             }
         }
     },
@@ -20,4 +20,4 @@ const useConfigStore = defineStore("useConfigStore", {
     persist: true
 })
 
-export default useConfigStore
+export default useLoginStore

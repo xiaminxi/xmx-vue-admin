@@ -3,12 +3,12 @@ import router from "./index"
 import useLoginStore from "@/modules/useLoginStore"
 router.beforeEach((to, from, next) => {
     if (useLoginStore().isLogin) {
-
+        next()
     } else {
         if (appConfig.whiteList.indexOf(to.path) !== -1) {
             next()
         } else {
-            if(global.meta)
+
             next(`/login?redirect=${to.fullPath}`)
         }
     }

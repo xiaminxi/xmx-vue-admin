@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <a-watermark content="XMX-admin">
+    <router-view />
+  </a-watermark>
 </template>
 
 <script lang="ts" setup>
