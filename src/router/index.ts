@@ -14,7 +14,8 @@ export const routes: RouteRecordRaw[] = [
         children: [
             {
                 path: 'index',
-                name: 'Home',
+                name: 'Index',
+                meta: { title: "首页", },
                 component: () => import('@/pages/index.vue') // 示例页面
             }
         ]
@@ -45,7 +46,7 @@ export const routes: RouteRecordRaw[] = [
                     icon: "MenuUnfoldOutlined",
                     keepAlive: true
                 },
-                component: () => import("@/pages/system/index.vue")
+                component: () => import("@/pages/system/menu/index.vue")
             },
             {
                 path: "user",
@@ -95,6 +96,12 @@ export const routes: RouteRecordRaw[] = [
                 name: "test5Product",
                 meta: { title: "产品管理" },
                 component: () => import("@/pages/product/index.vue")
+            },
+            {
+                path: "role",
+                name: "Role",
+                meta: { title: "角色管理" },
+                component: () => import("@/pages/system/role/index.vue")
             },
         ]
     },

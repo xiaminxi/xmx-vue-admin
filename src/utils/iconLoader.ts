@@ -1,5 +1,5 @@
 import * as AntIcons from '@ant-design/icons-vue'
-import { defineAsyncComponent, h } from 'vue'
+import { h } from 'vue'
 
 const resolveIcon = (iconName?: string) => {
     if (!iconName) return undefined

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import type { RouteLocationNormalizedLoaded, RouteLocationNormalizedLoadedGeneric, Router } from 'vue-router'
+import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 
 const useRouteStore = defineStore("useRouteStore", {
     state: (): UseRouteStore => {
@@ -44,6 +44,7 @@ const useRouteStore = defineStore("useRouteStore", {
                 }
             }
         },
+        /**点击标签页的下拉菜单 */
         dropdownMenuClick(event: { key: string }, item: TabItem, router: Router) {
             switch (event.key) {
                 case "refresh": {
@@ -57,6 +58,7 @@ const useRouteStore = defineStore("useRouteStore", {
                         router.push({ path })
                     }
 
+                    // 等待视图更新后重置keep-alive的缓存key
                     nextTick(() => {
                         this.refreshFlags[name] = false
                         this.inserCacheView(name)

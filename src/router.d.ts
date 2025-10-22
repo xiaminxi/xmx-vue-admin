@@ -7,7 +7,7 @@ declare module 'vue-router' {
         /**菜单图标 */
         icon?: string
         /**是否缓存页面 */
-        keepAlive?: Boolean
+        keepAlive?: boolean
         /**标题 */
         title?: string
     }

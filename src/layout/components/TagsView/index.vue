@@ -13,7 +13,10 @@
                 </a-button>
                 <template #overlay>
                     <a-menu @click="dropdownMenuClick($event, item, router)">
-                        <a-menu-item key="refresh">刷新页面</a-menu-item>
+                        <a-menu-item key="refresh" >
+                            <ReloadOutlined />
+                            <span>刷新页面</span>
+                        </a-menu-item>
                         <a-menu-item key="closeCurrent">关闭当前</a-menu-item>
                         <a-menu-item key="closeOthers">关闭其他</a-menu-item>
                         <a-menu-item key="closeLeft">关闭左侧</a-menu-item>
@@ -29,13 +32,17 @@
 
 <script lang="ts" setup>
     import useRouteStore from '@/modules/useRouteStore';
-    import { CloseOutlined } from '@ant-design/icons-vue';
+    import { CloseOutlined, ReloadOutlined } from '@ant-design/icons-vue';
     import ScrollView from "@/components/ScrollView/index.vue"
     const router = useRouter()
     const routeStore = useRouteStore()
 
     const { activeKey, tabsList } = storeToRefs(routeStore)
     const { dropdownMenuClick } = routeStore
+
+    const menuList = [
+        { title: "刷新页面", icon: "" }
+    ]
 
 
     const clickTabgsButton = (path: string) => {
@@ -48,4 +55,8 @@
     }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+    .tags-button {
+        border-radius: 0px;
+    }
+</style>

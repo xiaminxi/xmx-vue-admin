@@ -16,6 +16,8 @@ export const httpConfig: HttpConfig = {
 
 
 export const appConfig = {
+  /**网站水印 */
+  watermark: "XMX-adminse",
   /**token key */
   tokenKey: "XMX",
   /** 网站名称 */
@@ -27,6 +29,6 @@ export const appConfig = {
   /**路由白名单 */
   whiteList: [
     "/login",
-    '/register'
+    "/register"
   ]
 }

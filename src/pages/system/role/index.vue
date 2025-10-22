@@ -1,12 +1,12 @@
 <template>
     <div>
-        wer
+
     </div>
 </template>
 
 <script lang="ts" setup>
     onMounted(() => {
-        console.log("首页")
+        console.log("角色管理")
     })
 </script>
 

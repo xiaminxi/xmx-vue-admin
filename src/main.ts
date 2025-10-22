@@ -14,7 +14,8 @@ store.use(createPersistedState({
 }))
 
 
-app.use(router)
+app
     .use(Antd)
     .use(store)
+    .use(router)
     .mount('#app')
