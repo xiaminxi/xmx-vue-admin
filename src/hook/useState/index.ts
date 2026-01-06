@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
-export function useState<T>(initialValue?: T) {
-    const state = ref<T | undefined>(initialValue)
+export function useState<T>(initialValue: T) {
+    const state = ref<T>(initialValue)
     const setState = (value: T | ((prev: T) => T)) => {
         if (typeof value === 'function') {
             // 函数式更新（模仿 React）

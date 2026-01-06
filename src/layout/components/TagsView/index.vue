@@ -3,17 +3,14 @@
     <ScrollView :activeKey="activeKey">
         <template v-for="item in tabsList" :key="item.path">
             <a-dropdown :trigger="['contextmenu']">
-                <a-button class="tags-button" :data-key="item.path" type="primary" ghost v-if="activeKey === item.path" @click="clickTabgsButton(item.path)">
+                <a-button class="tags-button" type="primary" :data-key="item.path" :class="changeClass(item)" @click="clickTabgsButton(item.path)">
                     <span>{{ item.title }}</span>
-                    <CloseOutlined v-if="item.path !== '/index'" @click="clickIcon" />
+                    <CloseOutlined v-if="item.path !== '/index'" @click.passive="clickIcon" />
                 </a-button>
-                <a-button class="tags-button" :data-key="item.path" v-else @click="clickTabgsButton(item.path)">
-                    <span>{{ item.title }}</span>
-                    <CloseOutlined v-if="item.path !== '/index'" @click="clickIcon" />
-                </a-button>
+
                 <template #overlay>
                     <a-menu @click="dropdownMenuClick($event, item, router)">
-                        <a-menu-item key="refresh" >
+                        <a-menu-item key="refresh">
                             <ReloadOutlined />
                             <span>刷新页面</span>
                         </a-menu-item>
@@ -40,6 +37,10 @@
     const { activeKey, tabsList } = storeToRefs(routeStore)
     const { dropdownMenuClick } = routeStore
 
+    const changeClass = (item: TabItem) => {
+        return item.path === activeKey.value ? "active-tag" : ""
+    }
+
     const menuList = [
         { title: "刷新页面", icon: "" }
     ]
@@ -51,12 +52,17 @@
     }
 
     const clickIcon = () => {
-        alert(123)
+
     }
 </script>
 
 <style lang="scss" scoped>
     .tags-button {
         border-radius: 0px;
+    }
+
+    .active-tag {
+        color: #1677ff;
+        border-color: #1677ff;
     }
 </style>

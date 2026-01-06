@@ -5,7 +5,7 @@ const useRouteStore = defineStore("useRouteStore", {
     state: (): UseRouteStore => {
         return {
             tabsList: [
-                { title: "首页", path: "/index", name: "Index" }
+                // { title: "首页", path: "/index", name: "Index" }
             ],
             activeKey: null as unknown as string,
             cacheView: [],
@@ -49,6 +49,7 @@ const useRouteStore = defineStore("useRouteStore", {
             switch (event.key) {
                 case "refresh": {
                     const { name, path } = item
+                    console.log("🚀 ~ name:", name)
                     // 标记为需要刷新
                     this.refreshFlags[name] = true
                     // 从缓存中移除该组件
@@ -68,6 +69,7 @@ const useRouteStore = defineStore("useRouteStore", {
             }
         },
         inserCacheView(name: string) {
+            console.log("🚀 ~ name:", name)
             if (!this.cacheView.includes(name)) {
                 this.cacheView.push(name)
             }

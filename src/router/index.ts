@@ -10,12 +10,12 @@ export const routes: RouteRecordRaw[] = [
         path: '',
         redirect: '/index',
         component: Layout,
-        meta: { title: "首页", icon: "MenuUnfoldOutlined" },
+        meta: { title: "首页", icon: "MenuUnfoldOutlined", keepAlive: true },
         children: [
             {
                 path: 'index',
                 name: 'Index',
-                meta: { title: "首页", },
+                meta: { title: "首页", keepAlive: true },
                 component: () => import('@/pages/index.vue') // 示例页面
             }
         ]
@@ -40,7 +40,7 @@ export const routes: RouteRecordRaw[] = [
         children: [
             {
                 path: "menu",
-                name: "Menu",
+
                 meta: {
                     title: "菜单管理",
                     icon: "MenuUnfoldOutlined",
