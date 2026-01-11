@@ -7,14 +7,13 @@
 </template>
 
 <script setup lang="ts">
-    import { ref, watch, nextTick } from 'vue'
     import { useEventListener } from '@vueuse/core'
 
 
 
     const props = defineProps<{ activeKey: string | null }>()
 
-    const scrollContainer = ref<HTMLElement | null>(null)
+    const scrollContainer = useTemplateRef("scrollContainer")
 
     let isDown = false
     let startX = 0
